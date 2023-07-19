@@ -9,10 +9,10 @@
     <h1>Get Key Pairs</h1>
     <div><label for="publicKey">Public Key:</label>
     
-    <textarea id="Publickey" name="Publickey" rows="4" cols="50" readonly> <%= publicKey %>  </textarea></div>
+    <textarea id="Publickey" name="Publickey" rows="4" cols="50" readonly><%= publicKey %></textarea></div>
     <div> <label for="privateKey">Private Key:</label>
    
-    <textarea id="privateKey" name="privateKey" rows="4" cols="50" readonly> <%= privateKey %>  </textarea></div>
+    <textarea id="privateKey" name="privateKey" rows="4" cols="50" readonly><%= privateKey %></textarea></div>
    
     <form action="/generate" method="post">
 
@@ -24,24 +24,25 @@
     <form action="/encrypt" method="post" enctype="multipart/form-data">
     <div><label for="publicKey">Public Key:</label>
     
-        <textarea id="publicKey" name="publicKey" rows="4" cols="50" >   </textarea>
+        <textarea id="publicKey" name="publicKey" rows="4" cols="50" required></textarea>
     </div>
-        <input type="file" name="image" accept="image/*">
+        <input type="file" name="image" accept="image/*" required>
         <button type="submit" name="button" value="Compose">Encrypt</button>
     </form>
-    <textarea id="encrypted" name="encrypted" rows="4" cols="50" readonly> <%=  encryptedData %>  </textarea>
+    <textarea id="encrypted" name="encrypted" rows="4" cols="50" readonly> <%=  encryptedData %></textarea>
 
     <h1>Decrypt</h1>
     <form action="/decrypt" method="post" enctype="multipart/form-data">
     <div><label for="privateKey">Private Key:</label>
     
-        <textarea id="privateKey" name="privateKey" rows="4" cols="50" >   </textarea>
+        <textarea id="privateKey" name="privateKey" rows="4" cols="50" required></textarea>
     </div>
     <div><label for="Ecncrypted-data">Ecncrypted data</label>
     
-        <textarea id="ecncryptedData" name="ecncryptedData" rows="4" cols="50" >   </textarea>
+        <textarea id="ecncryptedData" name="ecncryptedData" rows="4" cols="50" required></textarea>
     </div>
         <button type="submit" name="button" value="Compose">Decrypt and download</button>
+    </form>
 
 </body>
 </html>
