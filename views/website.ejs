@@ -26,7 +26,7 @@
     
         <textarea id="publicKey" name="publicKey" rows="4" cols="50" >   </textarea>
     </div>
-        <input type="file" name="image" accept="image/*">
+        <input type="file" name="image" accept="image/*" required>
         <button type="submit" name="button" value="Compose">Encrypt</button>
     </form>
     <textarea id="encrypted" name="encrypted" rows="4" cols="50" readonly> <%=  encryptedData %>  </textarea>
@@ -35,11 +35,11 @@
     <form action="/decrypt" method="post" enctype="multipart/form-data">
     <div><label for="privateKey">Private Key:</label>
     
-        <textarea id="privateKey" name="privateKey" rows="4" cols="50" >   </textarea>
+        <textarea id="privateKey" name="privateKey" rows="4" cols="50" required>   </textarea>
     </div>
     <div><label for="Ecncrypted-data">Ecncrypted data</label>
     
-        <textarea id="ecncryptedData" name="ecncryptedData" rows="4" cols="50" >   </textarea>
+        <textarea id="ecncryptedData" name="ecncryptedData" rows="4" cols="50" required>   </textarea>
     </div>
         <button type="submit" name="button" value="Compose">Decrypt and download</button>
 
